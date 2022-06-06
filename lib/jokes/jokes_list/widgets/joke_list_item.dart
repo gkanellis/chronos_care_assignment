@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class JokeListItem extends StatelessWidget {
   final Joke joke;
-  final Function(Joke) onPressed;
+  final VoidCallback onPressed;
 
   const JokeListItem({
     Key? key,
@@ -13,13 +13,16 @@ class JokeListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onPressed(joke),
-      child: Card(
-        margin: const EdgeInsets.symmetric(horizontal: 16),
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      child: InkWell(
+        onTap: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text(joke.content, style: Theme.of(context).textTheme.titleMedium,),
+          child: Text(
+            joke.content,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
         ),
       ),
     );

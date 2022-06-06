@@ -69,7 +69,7 @@ class JokesListPageView extends StatelessWidget {
                       final joke = state.jokes[index];
                       return JokeListItem(
                         joke: joke,
-                        onPressed: (joke) {
+                        onPressed: () {
                           AutoRouter.of(context)
                               .push(JokeDetailsRoute(joke: joke));
                         },

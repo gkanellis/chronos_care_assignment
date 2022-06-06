@@ -19,6 +19,7 @@ dependencies:
   retrofit: ^3.0.1+1
   equatable: ^2.0.3
   dio_logger: ^4.0.8+8
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   flutter_test:
