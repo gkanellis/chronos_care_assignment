@@ -19,7 +19,7 @@ class JokesListCubit extends Cubit<JokesListState> {
         super(JokesListState.initial());
 
   void loadJokes() async {
-    if (_callLock != null) {
+    if (_callLock != null || state.totalPages == state.page) {
       return;
     }
     _callLock = Object();
@@ -28,6 +28,7 @@ class JokesListCubit extends Cubit<JokesListState> {
       final response = await _jokesRepository.getJokes(page: state.page);
       emit(state.copyWith(
         isLoading: false,
+        totalPages: response.totalPages,
         page: state.page + 1,
         jokes: state.jokes.toList(growable: true)..addAll(response.results),
         error: null,

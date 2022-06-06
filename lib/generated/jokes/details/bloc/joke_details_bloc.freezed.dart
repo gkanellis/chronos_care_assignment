@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$JokeDetailsState {
   bool get isUpVoted => throw _privateConstructorUsedError;
-
   bool get isDownVoted => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +29,6 @@ abstract class $JokeDetailsStateCopyWith<$Res> {
   factory $JokeDetailsStateCopyWith(
           JokeDetailsState value, $Res Function(JokeDetailsState) then) =
       _$JokeDetailsStateCopyWithImpl<$Res>;
-
   $Res call({bool isUpVoted, bool isDownVoted});
 }
 
@@ -40,7 +38,6 @@ class _$JokeDetailsStateCopyWithImpl<$Res>
   _$JokeDetailsStateCopyWithImpl(this._value, this._then);
 
   final JokeDetailsState _value;
-
   // ignore: unused_field
   final $Res Function(JokeDetailsState) _then;
 
@@ -68,7 +65,6 @@ abstract class _$$_JokeDetailsStateCopyWith<$Res>
   factory _$$_JokeDetailsStateCopyWith(
           _$_JokeDetailsState value, $Res Function(_$_JokeDetailsState) then) =
       __$$_JokeDetailsStateCopyWithImpl<$Res>;
-
   @override
   $Res call({bool isUpVoted, bool isDownVoted});
 }
@@ -146,10 +142,8 @@ abstract class _JokeDetailsState implements JokeDetailsState {
 
   @override
   bool get isUpVoted => throw _privateConstructorUsedError;
-
   @override
   bool get isDownVoted => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$$_JokeDetailsStateCopyWith<_$_JokeDetailsState> get copyWith =>

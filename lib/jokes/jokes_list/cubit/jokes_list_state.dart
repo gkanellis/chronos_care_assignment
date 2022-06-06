@@ -7,13 +7,15 @@ class JokesListState with _$JokesListState {
 
   factory JokesListState({
     required int page,
+    required int totalPages,
     required List<Joke> jokes,
     required bool isLoading,
     required dynamic error,
   }) = _JokesListState;
 
   factory JokesListState.initial() => JokesListState(
-        page: 1,
+    page: 1,
+        totalPages: -1,
         jokes: [],
         isLoading: true,
         error: null,

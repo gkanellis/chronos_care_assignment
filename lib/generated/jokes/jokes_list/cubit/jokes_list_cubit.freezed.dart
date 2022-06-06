@@ -17,6 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$JokesListState {
   int get page => throw _privateConstructorUsedError;
+
+  int get totalPages => throw _privateConstructorUsedError;
+
   List<Joke> get jokes => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   dynamic get error => throw _privateConstructorUsedError;
@@ -31,7 +34,13 @@ abstract class $JokesListStateCopyWith<$Res> {
   factory $JokesListStateCopyWith(
           JokesListState value, $Res Function(JokesListState) then) =
       _$JokesListStateCopyWithImpl<$Res>;
-  $Res call({int page, List<Joke> jokes, bool isLoading, dynamic error});
+
+  $Res call(
+      {int page,
+      int totalPages,
+      List<Joke> jokes,
+      bool isLoading,
+      dynamic error});
 }
 
 /// @nodoc
@@ -46,6 +55,7 @@ class _$JokesListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? page = freezed,
+    Object? totalPages = freezed,
     Object? jokes = freezed,
     Object? isLoading = freezed,
     Object? error = freezed,
@@ -54,6 +64,10 @@ class _$JokesListStateCopyWithImpl<$Res>
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPages: totalPages == freezed
+          ? _value.totalPages
+          : totalPages // ignore: cast_nullable_to_non_nullable
               as int,
       jokes: jokes == freezed
           ? _value.jokes
@@ -77,8 +91,14 @@ abstract class _$$_JokesListStateCopyWith<$Res>
   factory _$$_JokesListStateCopyWith(
           _$_JokesListState value, $Res Function(_$_JokesListState) then) =
       __$$_JokesListStateCopyWithImpl<$Res>;
+
   @override
-  $Res call({int page, List<Joke> jokes, bool isLoading, dynamic error});
+  $Res call(
+      {int page,
+      int totalPages,
+      List<Joke> jokes,
+      bool isLoading,
+      dynamic error});
 }
 
 /// @nodoc
@@ -95,6 +115,7 @@ class __$$_JokesListStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? page = freezed,
+    Object? totalPages = freezed,
     Object? jokes = freezed,
     Object? isLoading = freezed,
     Object? error = freezed,
@@ -103,6 +124,10 @@ class __$$_JokesListStateCopyWithImpl<$Res>
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPages: totalPages == freezed
+          ? _value.totalPages
+          : totalPages // ignore: cast_nullable_to_non_nullable
               as int,
       jokes: jokes == freezed
           ? _value._jokes
@@ -123,17 +148,20 @@ class __$$_JokesListStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_JokesListState extends _JokesListState {
-  _$_JokesListState(
-      {required this.page,
-      required final List<Joke> jokes,
-      required this.isLoading,
-      required this.error})
+  _$_JokesListState({required this.page,
+    required this.totalPages,
+    required final List<Joke> jokes,
+    required this.isLoading,
+    required this.error})
       : _jokes = jokes,
         super._();
 
   @override
   final int page;
+  @override
+  final int totalPages;
   final List<Joke> _jokes;
+
   @override
   List<Joke> get jokes {
     // ignore: implicit_dynamic_type
@@ -147,7 +175,7 @@ class _$_JokesListState extends _JokesListState {
 
   @override
   String toString() {
-    return 'JokesListState(page: $page, jokes: $jokes, isLoading: $isLoading, error: $error)';
+    return 'JokesListState(page: $page, totalPages: $totalPages, jokes: $jokes, isLoading: $isLoading, error: $error)';
   }
 
   @override
@@ -156,6 +184,8 @@ class _$_JokesListState extends _JokesListState {
         (other.runtimeType == runtimeType &&
             other is _$_JokesListState &&
             const DeepCollectionEquality().equals(other.page, page) &&
+            const DeepCollectionEquality()
+                .equals(other.totalPages, totalPages) &&
             const DeepCollectionEquality().equals(other._jokes, _jokes) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.error, error));
@@ -165,6 +195,7 @@ class _$_JokesListState extends _JokesListState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(page),
+      const DeepCollectionEquality().hash(totalPages),
       const DeepCollectionEquality().hash(_jokes),
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(error));
@@ -178,19 +209,28 @@ class _$_JokesListState extends _JokesListState {
 abstract class _JokesListState extends JokesListState {
   factory _JokesListState(
       {required final int page,
+      required final int totalPages,
       required final List<Joke> jokes,
       required final bool isLoading,
       required final dynamic error}) = _$_JokesListState;
+
   _JokesListState._() : super._();
 
   @override
   int get page => throw _privateConstructorUsedError;
+
+  @override
+  int get totalPages => throw _privateConstructorUsedError;
+
   @override
   List<Joke> get jokes => throw _privateConstructorUsedError;
+
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+
   @override
   dynamic get error => throw _privateConstructorUsedError;
+
   @override
   @JsonKey(ignore: true)
   _$$_JokesListStateCopyWith<_$_JokesListState> get copyWith =>
